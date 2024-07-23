@@ -4,15 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D3D3D3"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="307dp"
+        android:layout_height="294dp"
+        app:srcCompat="@drawable/client"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="144dp" />
+
     <TextView
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:text="Welcome to Client Keeper"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="#000EEE"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="473dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
