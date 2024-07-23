@@ -11,14 +11,14 @@
         android:layout_width="359dp"
         android:layout_height="59dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:text="Remove Customer"
         android:textAlignment="center"
         android:textColor="#00EEEE"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageProfile" />
 
     <ImageView
         android:id="@+id/imageProfile"
@@ -34,11 +34,11 @@
         android:id="@+id/txtUsername"
         android:layout_width="228dp"
         android:layout_height="46dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="39dp"
         android:text=" "
         android:textSize="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageProfile"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
@@ -97,8 +97,8 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
         android:text="Select and Enter detail of customer"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
