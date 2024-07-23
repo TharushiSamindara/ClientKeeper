@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         //Disappear this page after 1s
         GlobalScope.launch {
-            delay(1000) // Delay for 1 second (1000 milliseconds)
+            delay(3000) // Delay for 1 second (1000 milliseconds)
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
