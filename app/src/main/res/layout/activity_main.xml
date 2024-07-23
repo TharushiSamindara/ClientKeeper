@@ -11,18 +11,22 @@
         android:id="@+id/imageView4"
         android:layout_width="307dp"
         android:layout_height="294dp"
-        app:srcCompat="@drawable/client"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="144dp" />
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="144dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/client" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="35dp"
         android:text="Welcome to Client Keeper"
+        android:textColor="#000EEE"
         android:textSize="35dp"
         android:textStyle="bold"
-        android:textColor="#000EEE"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="473dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
