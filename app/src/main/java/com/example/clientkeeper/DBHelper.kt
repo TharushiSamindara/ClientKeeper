@@ -3,11 +3,12 @@ package com.example.clientkeeper
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import java.util.Date
 
-class DBHelper(context: Context):
-SQLiteOpenHelper(context, "Client", null, 1){
+class DBHelper(context: Context): SQLiteOpenHelper(context, "Client", null, 1){
 
     companion object{
         //Table for save username and password
@@ -22,38 +23,40 @@ SQLiteOpenHelper(context, "Client", null, 1){
     }
 
     //onCreate function for users details
-    fun onCreate1(db: SQLiteDatabase) {
+    /*fun onCreate1(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES1)
 
-    }
+    }*/
 
     //onCreate function for client details
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
-
+        db.execSQL(SQL_CREATE_ENTRIES1)
     }
 
     //onUpdate for users details
-    fun onUpgrade1(db: SQLiteDatabase, oldVersion: Int, newVersion: Int){
+    /*fun onUpgrade1(db: SQLiteDatabase, oldVersion: Int, newVersion: Int){
         db.execSQL(SQL_DELETE_ENTRIES1)
         onCreate1(db)
-    }
+    }*/
 
     //onUpdate for clients details
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int){
         db.execSQL(SQL_DELETE_ENTRIES)
+        db.execSQL(SQL_DELETE_ENTRIES1)
         onCreate(db)
     }
 
     //insertData for users details
+
     fun insertData1(indexNo:String?,username:String, password:String){
         val values = ContentValues()
         values.put("index_no", indexNo)
         values.put("username", username)
         values.put("password", password)
 
-        val db = this.writableDatabase
-        db.insert(TABLE_NAME1,null,values)
+        val db = this.readableDatabase
+        //db.insert(TABLE_NAME1,null,values)
 
     }
 

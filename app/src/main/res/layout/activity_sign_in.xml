@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegisterLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"

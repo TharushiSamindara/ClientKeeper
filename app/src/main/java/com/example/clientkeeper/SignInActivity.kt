@@ -1,5 +1,6 @@
 package com.example.clientkeeper
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 
 class SignInActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
@@ -15,11 +17,11 @@ class SignInActivity : AppCompatActivity() {
 
         var username= findViewById<EditText>(R.id.editTextUsername)
         var password= findViewById<EditText>(R.id.editTextPassword)
-        var btnLogin = findViewById<Button>(R.id.btnLogin)
+        var btnRegisterLogin = findViewById<Button>(R.id.btnRegisterLogin)
 
         var indexqlobal = 0
 
-        btnLogin.setOnClickListener{
+        btnRegisterLogin.setOnClickListener{
             var index = ++indexqlobal
 
             helper.insertData1(
