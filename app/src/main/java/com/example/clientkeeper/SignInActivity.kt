@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity() {
                 Log.e("DBHelper", "Failed to insert user details")
             } else {
                 // Insertion successful
-                val usernameVal = index.toString()
+                val usernameVal = username.text.toString()
                 val bundle = Bundle()
                 bundle.putString("usernamePara", usernameVal)
 
