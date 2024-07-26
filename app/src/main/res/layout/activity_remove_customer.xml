@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="359dp"
-        android:layout_height="59dp"
+        android:layout_width="357dp"
+        android:layout_height="49dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="16dp"
         android:text="Remove Customer"
@@ -22,8 +22,8 @@
 
     <ImageView
         android:id="@+id/imageProfile"
-        android:layout_width="104dp"
-        android:layout_height="85dp"
+        android:layout_width="94dp"
+        android:layout_height="72dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="19dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@
         android:id="@+id/editTextSearchingDetail"
         android:layout_width="382dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Enter detail of customer"
@@ -120,9 +120,20 @@
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="36dp"
         android:text="Remove"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="39dp"
+        android:text="Back"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
 

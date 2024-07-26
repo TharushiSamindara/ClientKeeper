@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="359dp"
-        android:layout_height="59dp"
+        android:layout_width="361dp"
+        android:layout_height="39dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="16dp"
         android:text="Edit Customer Details"
@@ -22,8 +22,8 @@
 
     <ImageView
         android:id="@+id/imageProfile"
-        android:layout_width="104dp"
-        android:layout_height="85dp"
+        android:layout_width="103dp"
+        android:layout_height="72dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="19dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,8 +106,8 @@
 
     <EditText
         android:id="@+id/editTextSearchingDetail"
-        android:layout_width="382dp"
-        android:layout_height="53dp"
+        android:layout_width="380dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
@@ -125,5 +125,16 @@
         android:text="Edit Customer Details"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="9dp"
+        android:text="Back"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

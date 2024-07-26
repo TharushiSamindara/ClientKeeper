@@ -1,5 +1,7 @@
 package com.example.clientkeeper
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +11,7 @@ import android.widget.Toast
 
 
 class NewCustomerActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_customer)
@@ -32,12 +35,7 @@ class NewCustomerActivity : AppCompatActivity() {
 
         val btnSubmit = findViewById<Button>(R.id.btnSubmitCustomer)
 
-
-        //var indexqlobal = 0
-
         btnSubmit.setOnClickListener {
-            //var index = ++indexqlobal
-
             helper.insertData(
                 indexNo.toString(),
                 name.text?.toString()!!,
@@ -46,6 +44,7 @@ class NewCustomerActivity : AppCompatActivity() {
                 gender.text?.toString()!!,
                 pnNo.text?.toString()!!,
                 address.text?.toString()!!,
+                usernameFromLogin!!
             )
 
             Toast.makeText(
@@ -55,5 +54,15 @@ class NewCustomerActivity : AppCompatActivity() {
             ).show()
 
         }
+
+        val btnBack = findViewById<Button>(R.id.btnBack)
+        val bundle = Bundle()
+        bundle.putString("usernamePara", usernameFromLogin)
+        btnBack.setOnClickListener{
+            val gotoNextScreen = Intent(applicationContext,DashboardActivity::class.java)
+            gotoNextScreen.putExtras(bundle)
+            startActivity(gotoNextScreen)
+        }
+
     }
 }

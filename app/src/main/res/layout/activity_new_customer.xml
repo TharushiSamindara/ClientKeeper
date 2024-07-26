@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="48dp"
         android:text="Index Number"
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,8 +111,8 @@
         android:id="@+id/editTextIndexNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Enter index no"
         android:inputType="text"
@@ -203,7 +203,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="240dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="28dp"
         android:text="Submit New Customer Details"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -229,4 +229,15 @@
         android:textSize="50dp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="100dp"
+        android:text="Back"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubmitCustomer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

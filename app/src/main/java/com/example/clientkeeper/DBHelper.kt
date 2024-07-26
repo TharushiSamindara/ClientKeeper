@@ -15,7 +15,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
 
         // Table for saving clients details
         const val TABLE_NAME = "ClientDetails"
-        private const val SQL_CREATE_ENTRIES = "CREATE TABLE " + TABLE_NAME + " (index_no TEXT, name TEXT, nic TEXT, birthdate TEXT, gender TEXT, pn TEXT, address TEXT)"
+        private const val SQL_CREATE_ENTRIES = "CREATE TABLE " + TABLE_NAME + " (index_no TEXT, name TEXT, nic TEXT, birthdate TEXT, gender TEXT, pn TEXT, address TEXT, username TEXT)"
         private const val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TABLE_NAME
     }
 
@@ -47,7 +47,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
     }
 
     // insertData for clients details
-    fun insertData(indexNo: String?, name: String, nic: String?, birthdate: String, gender: String, pn: String, address: String): Long {
+    fun insertData(indexNo: String?, name: String, nic: String?, birthdate: String, gender: String, pn: String, address: String, username: String): Long {
         val values = ContentValues().apply {
             put("index_no", indexNo)
             put("name", name)
@@ -56,6 +56,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
             put("gender", gender)
             put("pn", pn)
             put("address", address)
+            put("username",username)
         }
 
         val db = this.writableDatabase

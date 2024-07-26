@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="359dp"
-        android:layout_height="59dp"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="10dp"
         android:text="Search Customer"
@@ -120,9 +120,20 @@
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
+        android:layout_marginStart="272dp"
         android:layout_marginTop="8dp"
         android:text="Search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="8dp"
+        android:text="Back"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
 
