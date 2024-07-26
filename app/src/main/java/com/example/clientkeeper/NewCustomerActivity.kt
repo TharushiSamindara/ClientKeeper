@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 
@@ -12,22 +13,30 @@ class NewCustomerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_customer)
 
-        var helper = DBHelper(applicationContext)
+        //set username field in Dashboard
+        val i = intent
+        val usernameFromLogin : String? = i.getStringExtra("usernamePara")
 
-        var indexNo = findViewById<EditText>(R.id.editTextIndexNo)
-        var name = findViewById<EditText>(R.id.editTextName)
-        var nic = findViewById<EditText>(R.id.editTextNIC)
-        var birthdate = findViewById<EditText>(R.id.editTextBirthdate)
-        var gender = findViewById<EditText>(R.id.editTextGender)
-        var pnNo = findViewById<EditText>(R.id.editTextPn)
-        var address = findViewById<EditText>(R.id.editTextAddress)
+        val usernameInsert = findViewById<TextView>(R.id.txtUsername)
+        usernameInsert.text = usernameFromLogin
 
-        var btnSubmit = findViewById<Button>(R.id.btnSubmitCustomer)
+        val helper = DBHelper(applicationContext)
 
-        var indexqlobal = 0
+        val indexNo = findViewById<EditText>(R.id.editTextIndexNo)
+        val name = findViewById<EditText>(R.id.editTextName)
+        val nic = findViewById<EditText>(R.id.editTextNIC)
+        val birthdate = findViewById<EditText>(R.id.editTextBirthdate)
+        val gender = findViewById<EditText>(R.id.editTextGender)
+        val pnNo = findViewById<EditText>(R.id.editTextPn)
+        val address = findViewById<EditText>(R.id.editTextAddress)
+
+        val btnSubmit = findViewById<Button>(R.id.btnSubmitCustomer)
+
+
+        //var indexqlobal = 0
 
         btnSubmit.setOnClickListener {
-            var index = ++indexqlobal
+            //var index = ++indexqlobal
 
             helper.insertData(
                 indexNo.toString(),
