@@ -23,8 +23,8 @@ class SignInActivity : AppCompatActivity() {
         var indexqlobal = 0
 
         btnRegisterLogin.setOnClickListener{
-            var index = ++indexqlobal
-
+            val index = ++indexqlobal
+            println("ewjew")
             val result1 = helper.insertData1(
                 index.toString(),
                 username.text?.toString()!!,
@@ -40,9 +40,9 @@ class SignInActivity : AppCompatActivity() {
                 val bundle = Bundle()
                 bundle.putString("usernamePara", usernameVal)
 
-                val gotoNextScreen = Intent(applicationContext,DashboardActivity::class.java)
-                gotoNextScreen.putExtras(bundle)
-                startActivity(gotoNextScreen)
+                val gotoDashboard = Intent(applicationContext, DashboardActivity::class.java)
+                gotoDashboard.putExtras(bundle)
+                startActivity(gotoDashboard)
             }
 
 
