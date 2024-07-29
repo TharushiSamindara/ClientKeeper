@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEditedIndex" />
 
     <EditText
-        android:id="@+id/editTextSearchingDetail"
+        android:id="@+id/editTextNewDetail"
         android:layout_width="380dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
@@ -116,25 +116,25 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Button
-        android:id="@+id/btnSearch"
+        android:id="@+id/btnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
         android:text="Edit Customer Details"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNewDetail" />
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="94dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="19dp"
         android:text="Back"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/btnSearch"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSearchingDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNewDetail" />
 
     <EditText
         android:id="@+id/editTextEditedIndex"

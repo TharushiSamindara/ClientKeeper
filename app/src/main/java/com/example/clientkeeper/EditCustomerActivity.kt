@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 
 class EditCustomerActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -24,11 +25,57 @@ class EditCustomerActivity : AppCompatActivity() {
         val usernameInsert = findViewById<TextView>(R.id.txtUsername)
         usernameInsert.text = usernameFromLogin
 
-        //get column name
-        val editColumn = findViewById<RadioGroup>(R.id.radioGroup)
+        //button edit detail
+        val btnEdit = findViewById<Button>(R.id.btnEdit)
 
-        //get edited customer index
-        val editedCustomerIndex = findViewById<EditText>(R.id.editTextEditedIndex)
+        btnEdit.setOnClickListener{
+            //get edited customer index
+            val editedCustomerIndex = findViewById<EditText>(R.id.editTextEditedIndex)
+            val customerIndex = editedCustomerIndex.text.toString()
+
+            //get column name using radio button group
+            val editColumn = findViewById<RadioGroup>(R.id.radioGroup)
+            val editDetailColumn = editColumn.checkedRadioButtonId
+            val editColumnName: String
+
+            if (editDetailColumn != -1) {
+                // Find the RadioButton by ID
+                val selectedRadioButton: RadioButton = findViewById(editDetailColumn)
+
+                when (selectedRadioButton.text) {
+                    "radioIndexNo" -> {
+                        editColumnName = "index_no"
+                    }
+                    "radioName" -> {
+                        editColumnName = "name"
+                    }
+                    "radioNIC" -> {
+                        editColumnName = "nic"
+                    }
+                    "radioBirthdate" -> {
+                        editColumnName = "birthdate"
+                    }
+                    "radioGender" -> {
+                        editColumnName = "gender"
+                    }
+                    "radioPnNo" -> {
+                        editColumnName = "pn"
+                    }
+                    else -> {
+                        editColumnName = "address"
+                    }
+                }
+
+            } else {
+                // No RadioButton is selected
+                Toast.makeText(this, "No option selected", Toast.LENGTH_SHORT).show()
+            }
+
+            //get new input
+            val newInput = findViewById<EditText>(R.id.editTextNewDetail)
+            val newDetail = newInput.text.toString()
+        }
+
 
         //back button
         val btnBack = findViewById<Button>(R.id.btnBack)
