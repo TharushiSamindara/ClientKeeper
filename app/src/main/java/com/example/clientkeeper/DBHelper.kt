@@ -64,4 +64,88 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
         db.close()
         return result
     }
+
+    //edit index no
+    fun editIndexNo(indexNo: String?): Int {
+        val values = ContentValues().apply {
+            put("indexNo", indexNo)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
+    //edit name
+    fun editName(indexNo: String?, name: String): Int {
+        val values = ContentValues().apply {
+            put("name", name)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
+    //edit nic
+    fun editNic(indexNo: String?, nic: String): Int {
+        val values = ContentValues().apply {
+            put("nic", nic)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
+    //edit birthdate
+    fun editBirthdate(indexNo: String?, birthdate: String): Int {
+        val values = ContentValues().apply {
+            put("birthdate", birthdate)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
+    //edit gender
+    fun editGender(indexNo: String?, gender: String): Int {
+        val values = ContentValues().apply {
+            put("gender", gender)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
+    //edit pn no
+    fun editPnNo(indexNo: String?, pn: String): Int {
+        val values = ContentValues().apply {
+            put("pn", pn)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
+    //edit address
+    fun editAddress(indexNo: String?, address: String): Int {
+        val values = ContentValues().apply {
+            put("address", address)
+        }
+
+        val db = this.writableDatabase
+        val result = db.update(TABLE_NAME, values, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
 }
