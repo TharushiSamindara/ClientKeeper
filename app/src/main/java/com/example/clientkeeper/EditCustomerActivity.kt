@@ -40,61 +40,74 @@ class EditCustomerActivity : AppCompatActivity() {
             //get column name using radio button group
             val editColumn = findViewById<RadioGroup>(R.id.radioGroup)
             val editDetailColumn = editColumn.checkedRadioButtonId
-            val editColumnName: String
 
-            if (editDetailColumn != -1) {
-                // Find the RadioButton by ID
-                val selectedRadioButton: RadioButton = findViewById(editDetailColumn)
-
-                when (selectedRadioButton.text) {
-                    "radioIndexNo" -> {
-                        editColumnName = "index_no"
-                    }
-                    "radioName" -> {
-                        editColumnName = "name"
-                    }
-                    "radioNIC" -> {
-                        editColumnName = "nic"
-                    }
-                    "radioBirthdate" -> {
-                        editColumnName = "birthdate"
-                    }
-                    "radioGender" -> {
-                        editColumnName = "gender"
-                    }
-                    "radioPnNo" -> {
-                        editColumnName = "pn"
-                    }
-                    else -> {
-                        editColumnName = "address"
-                    }
-                }
-                if (customerIndex.isEmpty()) {
-                    Toast.makeText(this, "Enter Customer Index Number", Toast.LENGTH_SHORT).show()
+            if (customerIndex.isEmpty()) {
+                Toast.makeText(this, "Enter Customer Index Number", Toast.LENGTH_SHORT).show()
+            } else {
+                if (newDetail.isEmpty()) {
+                    Toast.makeText(this, "Enter new Detail", Toast.LENGTH_SHORT).show()
                 } else {
-                    if (newDetail.isEmpty()) {
-                        Toast.makeText(this, "Enter new Detail", Toast.LENGTH_SHORT).show()
-                    } else {
-
+                    if (editDetailColumn != -1) {
+                        // Find the RadioButton by ID
+                        val selectedRadioButton: RadioButton = findViewById(editDetailColumn)
 
 
                         //When all the date are entered
                         var helper = DBHelper(applicationContext)
 
-                        val dbRead = helper.readableDatabase
-                        val dbWrite = helper.writableDatabase
+                        var result : Int = 10
 
+                        when (selectedRadioButton.text) {
+                            "radioIndexNo" -> {
+                                helper.editIndexNo(customerIndex,newDetail)
+                            }
+                            "radioName" -> {
+                                helper.editName(customerIndex,newDetail)
+                            }
+                            "radioNIC" -> {
+                                helper.editNic(customerIndex,newDetail)
+                            }
+                            "radioBirthdate" -> {
+                                helper.editBirthdate(customerIndex,newDetail)
+                            }
+                            "radioGender" -> {
+                                helper.editGender(customerIndex,newDetail)
+                            }
+                            "radioPnNo" -> {
+                                helper.editPnNo(customerIndex,newDetail)
+                            }
+                            else -> {
+                                helper.editAddress(customerIndex,newDetail)
+                            }
+                        }
+                        when(result){
+                            1 -> {
+                                Toast.makeText(
+                                    baseContext,
+                                    "Update Successfully completed",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }else -> {
+                                Toast.makeText(
+                                    baseContext,
+                                    "Not Updated",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+
+
+                    } else {
+                        // No RadioButton is selected
+                        Toast.makeText(this, "No option selected", Toast.LENGTH_SHORT).show()
                     }
+
                 }
-
-
-            } else {
-                // No RadioButton is selected
-                Toast.makeText(this, "No option selected", Toast.LENGTH_SHORT).show()
             }
 
-
         }
+
+
 
 
         //back button

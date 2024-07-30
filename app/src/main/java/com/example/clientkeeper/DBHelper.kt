@@ -66,9 +66,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
     }
 
     //edit index no
-    fun editIndexNo(indexNo: String?): Int {
+    fun editIndexNo(indexNo: String?,indexNoNew: String?): Int {
         val values = ContentValues().apply {
-            put("indexNo", indexNo)
+            put("indexNo", indexNoNew)
         }
 
         val db = this.writableDatabase
