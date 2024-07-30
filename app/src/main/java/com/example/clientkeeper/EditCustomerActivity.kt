@@ -33,6 +33,10 @@ class EditCustomerActivity : AppCompatActivity() {
             val editedCustomerIndex = findViewById<EditText>(R.id.editTextEditedIndex)
             val customerIndex = editedCustomerIndex.text.toString()
 
+            //get new input
+            val newInput = findViewById<EditText>(R.id.editTextNewDetail)
+            val newDetail = newInput.text.toString()
+
             //get column name using radio button group
             val editColumn = findViewById<RadioGroup>(R.id.radioGroup)
             val editDetailColumn = editColumn.checkedRadioButtonId
@@ -65,15 +69,31 @@ class EditCustomerActivity : AppCompatActivity() {
                         editColumnName = "address"
                     }
                 }
+                if (customerIndex.isEmpty()) {
+                    Toast.makeText(this, "Enter Customer Index Number", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (newDetail.isEmpty()) {
+                        Toast.makeText(this, "Enter new Detail", Toast.LENGTH_SHORT).show()
+                    } else {
+
+
+
+                        //When all the date are entered
+                        var helper = DBHelper(applicationContext)
+
+                        val dbRead = helper.readableDatabase
+                        val dbWrite = helper.writableDatabase
+
+                    }
+                }
+
 
             } else {
                 // No RadioButton is selected
                 Toast.makeText(this, "No option selected", Toast.LENGTH_SHORT).show()
             }
 
-            //get new input
-            val newInput = findViewById<EditText>(R.id.editTextNewDetail)
-            val newDetail = newInput.text.toString()
+
         }
 
 
