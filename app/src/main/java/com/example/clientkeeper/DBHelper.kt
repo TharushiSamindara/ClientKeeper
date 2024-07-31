@@ -148,4 +148,13 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
         db.close()
         return result
     }
+
+    //remove customer
+    fun removeCustomer(indexNo: String?): Int {
+        val db = this.writableDatabase
+        val result = db.delete(TABLE_NAME, "index_no = ?", arrayOf(indexNo))
+        db.close()
+        return result
+    }
+
 }
