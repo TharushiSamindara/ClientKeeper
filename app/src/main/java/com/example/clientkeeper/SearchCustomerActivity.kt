@@ -47,7 +47,7 @@ class SearchCustomerActivity : AppCompatActivity() {
             if (customerDetail.isEmpty()) {
                 Toast.makeText(this, "Enter Customer Detail", Toast.LENGTH_SHORT).show()
             } else {
-                ///////////////////////////////////
+
                 if (editDetailColumn != -1) {
                     // Find the RadioButton by ID
                     val selectedRadioButton: RadioButton = findViewById(editDetailColumn)
@@ -101,7 +101,6 @@ class SearchCustomerActivity : AppCompatActivity() {
                     // No RadioButton is selected
                     Toast.makeText(this, "No option selected", Toast.LENGTH_SHORT).show()
                 }
-                /////////////////////////////////
             }
         }
     }

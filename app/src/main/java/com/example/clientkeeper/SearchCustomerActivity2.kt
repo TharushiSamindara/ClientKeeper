@@ -27,5 +27,31 @@ class SearchCustomerActivity2 : AppCompatActivity() {
             gotoNextScreen.putExtras(bundle)
             startActivity(gotoNextScreen)
         }
+
+        val txtIndexNo = findViewById<TextView>(R.id.txtIndexNo)
+        val txtName = findViewById<TextView>(R.id.txtName)
+        val txtNIC = findViewById<TextView>(R.id.txtNIC)
+        val txtBirthdate = findViewById<TextView>(R.id.txtBirthdate)
+        val txtGender = findViewById<TextView>(R.id.txtGender)
+        val txtPn = findViewById<TextView>(R.id.txtPnNo)
+        val txtAddress = findViewById<TextView>(R.id.txtAddress)
+
+        // Retrieve the intent extras
+        val indexNo = intent.getStringExtra("indexNo")
+        val name = intent.getStringExtra("name")
+        val nic = intent.getStringExtra("nic")
+        val birthdate = intent.getStringExtra("birthdate")
+        val gender = intent.getStringExtra("gender")
+        val pn = intent.getStringExtra("pn")
+        val address = intent.getStringExtra("address")
+
+        // Assign the retrieved data to the TextViews
+        txtIndexNo.text = indexNo
+        txtName.text = name
+        txtNIC.text = nic
+        txtBirthdate.text = birthdate
+        txtGender.text = gender
+        txtPn.text = pn
+        txtAddress.text = address
     }
 }
