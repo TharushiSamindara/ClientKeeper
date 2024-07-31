@@ -59,25 +59,25 @@ class EditCustomerActivity : AppCompatActivity() {
 
                         when (selectedRadioButton.text) {
                             "radioIndexNo" -> {
-                                helper.editIndexNo(customerIndex,newDetail)
+                                result = helper.editIndexNo(customerIndex,newDetail)
                             }
                             "radioName" -> {
-                                helper.editName(customerIndex,newDetail)
+                                result = helper.editName(customerIndex,newDetail)
                             }
                             "radioNIC" -> {
-                                helper.editNic(customerIndex,newDetail)
+                                result = helper.editNic(customerIndex,newDetail)
                             }
                             "radioBirthdate" -> {
-                                helper.editBirthdate(customerIndex,newDetail)
+                                result = helper.editBirthdate(customerIndex,newDetail)
                             }
                             "radioGender" -> {
-                                helper.editGender(customerIndex,newDetail)
+                                result = helper.editGender(customerIndex,newDetail)
                             }
                             "radioPnNo" -> {
-                                helper.editPnNo(customerIndex,newDetail)
+                                result = helper.editPnNo(customerIndex,newDetail)
                             }
                             else -> {
-                                helper.editAddress(customerIndex,newDetail)
+                                result = helper.editAddress(customerIndex,newDetail)
                             }
                         }
                         when(result){

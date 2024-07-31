@@ -157,4 +157,70 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
         return result
     }
 
+    //search customer from Index no
+    fun searchCustomerFromIndex(indexNo: String?): Customer? {
+        val db = this.readableDatabase
+        val cursor = db.query(
+            TABLE_NAME,
+            null,
+            "index_no = ?",
+            arrayOf(indexNo),
+            null,
+            null,
+            null
+        )
+
+        var customer: Customer? = null
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                val indexNo = cursor.getString(cursor.getColumnIndexOrThrow("index_no"))
+                val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
+                val nic = cursor.getString(cursor.getColumnIndexOrThrow("nic"))
+                val birthdate = cursor.getString(cursor.getColumnIndexOrThrow("birthdate"))
+                val gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"))
+                val pn = cursor.getString(cursor.getColumnIndexOrThrow("pn"))
+                val address = cursor.getString(cursor.getColumnIndexOrThrow("address"))
+
+                customer = Customer(indexNo, name, nic, birthdate, gender, pn, address)
+
+            }
+            cursor.close()
+        }
+        db.close()
+        return customer
+    }
+
+
+    //search customer from NIC
+    fun searchCustomerFromNic(NIC: String?): Customer? {
+        val db = this.readableDatabase
+        val cursor = db.query(
+            TABLE_NAME,
+            null,
+            "nic = ?",
+            arrayOf(NIC),
+            null,
+            null,
+            null
+        )
+
+        var customer: Customer? = null
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                val indexNo = cursor.getString(cursor.getColumnIndexOrThrow("index_no"))
+                val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
+                val nic = cursor.getString(cursor.getColumnIndexOrThrow("nic"))
+                val birthdate = cursor.getString(cursor.getColumnIndexOrThrow("birthdate"))
+                val gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"))
+                val pn = cursor.getString(cursor.getColumnIndexOrThrow("pn"))
+                val address = cursor.getString(cursor.getColumnIndexOrThrow("address"))
+
+                customer = Customer(indexNo, name, nic, birthdate, gender, pn, address)
+            }
+            cursor.close()
+        }
+        db.close()
+        return customer
+    }
+
 }
