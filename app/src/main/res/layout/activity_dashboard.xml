@@ -18,6 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+
     <ImageButton
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
@@ -66,7 +68,7 @@
     <View
         android:id="@+id/view5"
         android:layout_width="356dp"
-        android:layout_height="217dp"
+        android:layout_height="166dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:background="#D3D3D3"
@@ -93,24 +95,22 @@
         app:layout_constraintStart_toStartOf="@+id/view5"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="263dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="36dp"
-        android:text="Total number of customers : "
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+    <ScrollView
+        android:id="@+id/scrollViewCustomer"
+        android:layout_width="406dp"
+        android:layout_height="435dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5">
 
-    <TextView
-        android:id="@+id/txtNumCustomers"
-        android:layout_width="67dp"
-        android:layout_height="32dp"
-        android:text=" "
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="205dp" />
+        <LinearLayout
+            android:id="@+id/customerDetailsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

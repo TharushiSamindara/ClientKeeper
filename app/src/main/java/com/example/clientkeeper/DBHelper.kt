@@ -223,4 +223,38 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Client", null, 1) 
         return customer
     }
 
+    //Get all the details of customer to dashboard
+    fun getAllCustomers(): List<Customer> {
+        val customers = mutableListOf<Customer>()
+        val db = this.readableDatabase
+        val cursor = db.query(
+            TABLE_NAME,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        )
+
+        if (cursor.moveToFirst()) {
+            do {
+                val indexNo = cursor.getString(cursor.getColumnIndexOrThrow("index_no"))
+                val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
+                val nic = cursor.getString(cursor.getColumnIndexOrThrow("nic"))
+                val birthdate = cursor.getString(cursor.getColumnIndexOrThrow("birthdate"))
+                val gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"))
+                val pn = cursor.getString(cursor.getColumnIndexOrThrow("pn"))
+                val address = cursor.getString(cursor.getColumnIndexOrThrow("address"))
+
+                val customer = Customer(indexNo, name, nic, birthdate, gender, pn, address)
+                customers.add(customer)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return customers
+    }
+
+
 }
